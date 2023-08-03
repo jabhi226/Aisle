@@ -27,7 +27,7 @@ class EnterOtpFragment : Fragment() {
     private var _binding: FragmentEnterOtpBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by activityViewModels<OtpViewModel>()
+    private val viewModel by viewModels<OtpViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

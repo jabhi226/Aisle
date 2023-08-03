@@ -7,7 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,8 +20,8 @@ class LoginViewModel @Inject constructor(
     private val coroutineExceptionHandler: CoroutineExceptionHandler
 ) : ViewModel() {
 
-    private val _loginResponse = MutableStateFlow<Resource<Boolean>?>(null)
-    val loginResponse = _loginResponse.asStateFlow()
+    private val _loginResponse = MutableSharedFlow<Resource<Boolean>?>()
+    val loginResponse = _loginResponse.asSharedFlow()
 
     fun loginUsingPhoneNumber(pinCode: String, phoneNumber: String) {
         CoroutineScope(Dispatchers.IO + coroutineExceptionHandler).launch {

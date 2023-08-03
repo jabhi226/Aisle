@@ -20,25 +20,35 @@ class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
+    private var currentFragment: Fragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
-        addFragment(EnterPhoneFragment.newInstance())
+
+        if (savedInstanceState != null) {
+            supportFragmentManager.getFragment(savedInstanceState, "myFragmentName")?.let { it ->
+                currentFragment = it
+                currentFragment?.let { addFragment(it) }
+            }
+        } else {
+            addFragment(EnterPhoneFragment.newInstance())
+        }
 
     }
 
     fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .add(binding.loginActivityFragments.id, fragment, fragment::class.java.simpleName)
+            .replace(binding.loginActivityFragments.id, fragment, fragment::class.java.simpleName)
             .setCustomAnimations(
                 R.anim.fragment_right_to_left,
                 R.anim.fragment_left_to_right,
                 R.anim.fragment_right_to_left,
                 R.anim.fragment_left_to_right
             )
-            .addToBackStack(fragment::class.java.simpleName)
+            .addToBackStack(null)
             .commit()
     }
 
@@ -57,6 +67,15 @@ class LoginActivity : AppCompatActivity() {
             else -> {
                 super.onBackPressed()
             }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+        supportFragmentManager.findFragmentById(binding.loginActivityFragments.id)?.let {
+            currentFragment = it
+            supportFragmentManager.putFragment(outState, "myFragmentName", currentFragment!!)
         }
     }
 }
