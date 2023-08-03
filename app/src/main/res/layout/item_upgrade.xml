@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_interest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/interested_"
+        android:textAppearance="@style/interested_"
+        app:layout_constraintEnd_toStartOf="@id/upgrade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/personal_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:fontFamily="@font/inter"
+        android:text="@string/premium_mem"
+        android:textAppearance="@style/premium_mem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/upgrade"
+        app:layout_constraintStart_toStartOf="@id/tv_interest"
+        app:layout_constraintTop_toBottomOf="@id/tv_interest" />
+
+    <TextView
+        android:id="@+id/upgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/bg_filled_round"
+        android:fontFamily="@font/inter_bold"
+        android:paddingStart="@dimen/_18sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_18sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="@string/upgrade"
+        android:textAppearance="@style/upgrade"
+        app:layout_constraintBottom_toBottomOf="@id/personal_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_interest" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

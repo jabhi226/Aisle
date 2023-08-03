@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moudles.notes.ui.activity.NotesActivity">
+
+    <!--    <FrameLayout-->
+    <!--        android:visibility="gone"-->
+    <!--        android:id="@+id/frame_note_activity"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabGravity="fill"
+        app:tabIconTint="@color/tab_color"
+        app:tabIndicator="@null"
+        app:tabInlineLabel="false"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed"
+        app:tabPaddingBottom="0dp"
+        app:tabPaddingEnd="0dp"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingTop="0dp"
+        app:tabRippleColor="?attr/colorControlHighlight"
+        app:tabSelectedTextColor="#9B9B9B"
+        app:tabTextAppearance="@style/tabTextAppearance"
+        app:tabTextColor="#9B9B9B"
+        app:tabUnboundedRipple="true" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tab_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

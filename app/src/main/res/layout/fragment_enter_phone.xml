@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="#FFF"
+    tools:context=".moudles.login.ui.fragments.EnterPhoneFragment">
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:fontFamily="@font/inter"
+        android:text="@string/get_otp"
+        android:textAppearance="@style/get_otp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_enter_your_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/inter_black"
+        android:text="@string/enter_your_"
+        android:textAppearance="@style/enter_your_"
+        app:layout_constraintStart_toStartOf="@id/tv_phone_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+
+    <EditText
+        android:id="@+id/et_pin_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_border_radius"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusedByDefault="true"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:hint="+91"
+        android:imeOptions="actionNext"
+        android:inputType="phone"
+        android:maxLength="4"
+        android:minWidth="@dimen/_48sdp"
+        android:paddingStart="@dimen/_14sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:textAppearance="@style/get_otp"
+        android:textCursorDrawable="@drawable/et_cursor"
+        app:layout_constraintStart_toStartOf="@id/tv_enter_your_otp"
+        app:layout_constraintTop_toBottomOf="@id/tv_enter_your_otp" />
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:background="@drawable/bg_border_radius"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:hint="9876543212"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:minWidth="@dimen/_120sdp"
+        android:paddingStart="@dimen/_14sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:textAppearance="@style/get_otp"
+        android:textCursorDrawable="@drawable/et_cursor"
+        app:layout_constraintStart_toEndOf="@id/et_pin_code"
+        app:layout_constraintTop_toTopOf="@id/et_pin_code" />
+
+    <TextView
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_filled_round"
+        android:fontFamily="@font/inter_bold"
+        android:foreground="@drawable/ripple_round"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/continue_"
+        android:textAppearance="@style/continue_"
+        app:layout_constraintStart_toStartOf="@id/et_pin_code"
+        app:layout_constraintTop_toBottomOf="@id/et_pin_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="#FFF"
+    tools:context=".moudles.login.ui.fragments.EnterPhoneFragment">
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:fontFamily="@font/inter"
+        android:textAppearance="@style/get_otp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+91 9999999999" />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:src="@drawable/iv_edit"
+        app:layout_constraintBottom_toBottomOf="@id/tv_phone_number"
+        app:layout_constraintStart_toEndOf="@id/tv_phone_number"
+        app:layout_constraintTop_toTopOf="@id/tv_phone_number" />
+
+    <TextView
+        android:id="@+id/tv_enter_your_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/inter_black"
+        android:text="@string/enter_the_otp"
+        android:textAppearance="@style/enter_your_"
+        app:layout_constraintStart_toStartOf="@id/tv_phone_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+
+    <EditText
+        android:id="@+id/et_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_border_radius"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:hint="1234"
+        android:inputType="number"
+        android:minWidth="@dimen/_60sdp"
+        android:paddingStart="@dimen/_14sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:textAppearance="@style/get_otp"
+        app:layout_constraintStart_toStartOf="@id/tv_enter_your_otp"
+        app:layout_constraintTop_toBottomOf="@id/tv_enter_your_otp" />
+
+    <TextView
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:foreground="@drawable/ripple_round"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_filled_round"
+        android:fontFamily="@font/inter_bold"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/continue_"
+        android:textAppearance="@style/continue_"
+        app:layout_constraintStart_toStartOf="@id/et_otp"
+        app:layout_constraintTop_toBottomOf="@id/et_otp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/continue_"
+        android:textAppearance="@style/continue_"
+        app:layout_constraintBottom_toBottomOf="@id/btn_continue"
+        app:layout_constraintStart_toEndOf="@id/btn_continue"
+        app:layout_constraintTop_toTopOf="@id/btn_continue"
+        tools:text="00:59" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
